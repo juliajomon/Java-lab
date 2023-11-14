@@ -1,37 +1,37 @@
-abstract class Shape{
-    int numberOfSides(){
-
-    }
-}
-class Rectangle extends Shape{
-    @Override
-    int numberOfSides(){
-       return 4;
-    }
+abstract class Shape {
+    public abstract int numberOfSides();
 }
 
-class Triangle extends Shape{
+class Rectangle extends Shape {
     @Override
-    int numberOfSides(){
+    public int numberOfSides() {
+        return 4;
+    }
+}
+
+class Triangle extends Shape {
+    @Override
+    public int numberOfSides() {
         return 3;
     }
 }
 
-class Hexagon extends Shape{
+class Hexagon extends Shape {
     @Override
-    int numberOfSides(){
+    public int numberOfSides() {
         return 6;
     }
 }
 
 class ShapeTest{
-    public static void main (String[] args){
-        Rectangle rectangle = new Rectangle();
-        Triangle triangle = new Triangle();
-        Hexagon hexagon = new Hexagon();
 
-        System.out.println("Number of sides in Rectangle: " + rectangle.numberOfSides());
-        System.out.println("Number of sides in Rectangle: "+ triangle.numberOfSides());
-        System.out.println("Number of sides in Rectangle: "+ hexagon.numberOfSides());
+    public static void main(String[] args) {
+        Shape rectangle = new Rectangle();
+        Shape triangle = new Triangle();
+        Shape hexagon = new Hexagon();
+
+        System.out.println("Number of sides in a rectangle: " + rectangle.numberOfSides());
+        System.out.println("Number of sides in a triangle: " + triangle.numberOfSides());
+        System.out.println("Number of sides in a hexagon: " + hexagon.numberOfSides());
     }
 }
